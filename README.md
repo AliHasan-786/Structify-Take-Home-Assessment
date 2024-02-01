@@ -6,12 +6,13 @@ This Python program calculates the number of intersections that occur inside a c
 ## Algorithm
 The algorithm operates by following these steps:
 
-It generates pairs of chords using input lists of radian values and identifiers.
-These chords are sorted based on their starting radian values.
-A balanced binary search tree, implemented as a SortedList, efficiently manages active chords.
-As the algorithm iterates over the sorted chords, it updates the list of active chords and counts the intersections.
-Intersections are identified by counting the number of active chords that intersect with each new chord.
-Running the Code
+- It generates pairs of chords using input lists of radian values and identifiers.
+- These chords are sorted based on their starting radian values.
+- A balanced binary search tree, implemented as a SortedList, efficiently manages active chords.
+- As the algorithm iterates over the sorted chords, it updates the list of active chords and counts the intersections.
+- Intersections are identified by counting the number of active chords that intersect with each new chord.
+
+## Running the Code
 Ensure Python 3 and the sortedcontainers module are installed. Run the script from the command line with:
 
 python count_intersections.py
@@ -22,9 +23,9 @@ Prepare the radians and identifiers list to pass to the count_intersections func
 The time complexity of the algorithm is O(n log n), with n being the number of chords, because:
 
 ## Sorting the chords requires O(n log n) time.
-Each operation for chord insertion or removal in the SortedList takes O(log n) time.
-With O(n) total insertions and removals, the combined operations also result in O(n log n) complexity.
-The space complexity is O(n), needed for storing all chords and the active chords list.
+- Each operation for chord insertion or removal in the SortedList takes O(log n) time.
+- With O(n) total insertions and removals, the combined operations also result in O(n log n) complexity.
+- The space complexity is O(n), needed for storing all chords and the active chords list.
 
 ## Edge Cases
 The algorithm has been tested against edge cases, including:
