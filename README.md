@@ -1,42 +1,45 @@
 # Structify-Take-Home-Assessment
-## Chord Intersection Counter
+
 ## Overview
-This program counts the number of intersections formed by chords in a circle. It assumes that all starting and ending points of the chords are unique, and only intersections that happen inside the circle are counted.
+This Python program calculates the number of intersections that occur inside a circle formed by various chords. It is assumed that each chord has unique starting and ending points.
 
 ## Algorithm
-The algorithm works as follows:
+The algorithm operates by following these steps:
 
-Pairs of chords are generated from the input lists of radian values and identifiers.
+It generates pairs of chords using input lists of radian values and identifiers.
+These chords are sorted based on their starting radian values.
+A balanced binary search tree, implemented as a SortedList, efficiently manages active chords.
+As the algorithm iterates over the sorted chords, it updates the list of active chords and counts the intersections.
+Intersections are identified by counting the number of active chords that intersect with each new chord.
+Running the Code
+Ensure Python 3 and the sortedcontainers module are installed. Run the script from the command line with:
 
-These chords are then sorted by their starting radian measure.
-
-A balanced binary search tree implemented as a SortedList is used to efficiently manage active chords.
-
-The algorithm iterates over the sorted chords, updating the list of active chords and counting intersections.
-
-Intersections are counted by checking the number of active chords that would intersect with a new chord.
-
-## Running the Code
-To run this code, you need Python 3 and the sortedcontainers module installed. You can run the script from the command line as follows:
-
-python count_intersections.py
-
-Make sure you have the radians and identifiers list ready to pass to the count_intersections function.
+'python count_intersections.py'
+Prepare the radians and identifiers list to pass to the count_intersections function before running.
 
 ## Big-O Analysis
-The time complexity of the algorithm is O(n log n), where n is the number of chords. This is because:
+The time complexity of the algorithm is O(n log n), with n being the number of chords, because:
 
-Sorting the chords takes O(n log n) time.
-
-Each chord insertion and removal operation in the SortedList takes O(log n) time.
-
-The total number of insertions and removals is O(n), leading to O(n log n) for all operations combined.
-
-The space complexity is O(n), as we need to store all chords and the active chords list.
+## Sorting the chords requires O(n log n) time.
+Each operation for chord insertion or removal in the SortedList takes O(log n) time.
+With O(n) total insertions and removals, the combined operations also result in O(n log n) complexity.
+The space complexity is O(n), needed for storing all chords and the active chords list.
 
 ## Edge Cases
-The algorithm handles the following edge cases:
+The algorithm has been tested against edge cases, including:
 
-Chords that have the same starting or ending radians.
+Chords sharing the same starting or ending radians.
+Chords that wrap around the circle, crossing the 0 radian mark.
+These cases are handled appropriately within the algorithm to ensure accurate intersection counts.
 
-Chords that wrap around the circle past the 0 radian point.
+## Running the Tests
+Unit tests are included to verify the algorithm against various scenarios:
+
+'python -m unittest test_count_intersections.py'
+The test suite covers:
+
+- Single intersection scenarios.
+- No intersection scenarios.
+- Multiple intersection scenarios.
+- Chords with identical start or end points.
+- Chords that wrap around the 0 radian point to ensure the algorithm's robustness.
