@@ -13,7 +13,9 @@ The algorithm iterates over the sorted chords, updating the list of active chord
 Intersections are counted by checking the number of active chords that would intersect with a new chord.
 Running the Code
 To run this code, you need Python 3 and the sortedcontainers module installed. You can run the script from the command line as follows:
+
 python count_intersections.py
+
 Make sure you have the radians and identifiers list ready to pass to the count_intersections function.
 
 ## Big-O Analysis
