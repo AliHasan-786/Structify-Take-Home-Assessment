@@ -14,7 +14,8 @@ Intersections are identified by counting the number of active chords that inters
 Running the Code
 Ensure Python 3 and the sortedcontainers module are installed. Run the script from the command line with:
 
-'python count_intersections.py'
+python count_intersections.py
+
 Prepare the radians and identifiers list to pass to the count_intersections function before running.
 
 ## Big-O Analysis
@@ -35,7 +36,8 @@ These cases are handled appropriately within the algorithm to ensure accurate in
 ## Running the Tests
 Unit tests are included to verify the algorithm against various scenarios:
 
-'python -m unittest test_count_intersections.py'
+python -m unittest test_count_intersections.py
+
 The test suite covers:
 
 - Single intersection scenarios.
